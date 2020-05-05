@@ -7,7 +7,7 @@ import './style.css';
 
 import logoImg from '../../assets/logo.png';
 
-export default function Logon() {
+export default function Initial() {
     return (
         <div className="initial-container">
             <header>
@@ -20,7 +20,7 @@ export default function Logon() {
                         Criar Conta
                         <FaUserPlus size="28" color="white" className="icone" />
                     </Link>
-                    <Link className="button login" to="">
+                    <Link className="button login" to="/login">
                         login
                         <FaSignInAlt size="22" color="white" className="icone" />
                     </Link>
