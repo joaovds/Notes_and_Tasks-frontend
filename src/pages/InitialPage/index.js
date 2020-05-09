@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { FaUserPlus, FaSignInAlt } from 'react-icons/fa';
-
 import './style.css';
 
 import logoImg from '../../assets/logo.png';
@@ -16,13 +14,11 @@ export default function Initial() {
                 </div>
                 
                 <div className="buttons">
-                    <Link className="button create-user" to="">
-                        Criar Conta
-                        <FaUserPlus size="28" color="white" className="icone" />
-                    </Link>
                     <Link className="button login" to="/login">
-                        login
-                        <FaSignInAlt size="22" color="white" className="icone" />
+                        Log in
+                    </Link>
+                    <Link className="button register" to="">
+                        Register
                     </Link>
                 </div>
                 
