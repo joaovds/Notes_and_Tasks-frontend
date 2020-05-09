@@ -14,7 +14,7 @@
     align-items: center;
     background: linear-gradient(180deg, rgba(220, 216, 216, 0.7) 0%, rgba(218, 218, 218, 0.56) 100%);
 }
-.initial-container header img.logo {
+.initial-container header img.logo-header {
     width: 140px;
     margin-left: 80px;
     margin-top: 3px;
@@ -51,39 +51,35 @@
 .initial-container section {
     position: relative;
     display: flex;
-    justify-content: space-around;
+    height: 530px;
+    justify-content: space-evenly;
     align-items: center;
-    width: 60vw;
-    margin: 0 auto;
-}
-.initial-container section div.title {
-    font-family: 'Lobster', cursive;
-    text-align: center;
-    text-shadow: 1px 1px 8px antiquewhite;
-    font-size: 80px;
-    line-height: 120px;
-}
-.initial-container section div.title:hover {
-    color: rgba(0, 0, 0, 0.904);
-}
-.initial-container section div.title h2 {
-    font-size: 70px;
 }
 .initial-container section div.text {
-    position: relative;
-    width: 50%;
-    font-size: 23px;
+    width: 550px;
+    margin-top: 0;
+    font-size: 30px;
+    line-height: 44px;
     text-align: justify;
-    text-shadow: 0 0 5px antiquewhite;
-    text-indent: 20px;
-}
+    letter-spacing: -0.015em;
 
-.initial-container footer {
-    position: absolute;
+    color: #000000;
+    text-shadow: 1px 0px 2px rgba(0, 56, 255, 0.7);
+}
+.initial-container section div.text .lastText {
+    margin-top: 50px;
+}
+.initial-container section img.logo-section {
+    width: 550px;
+}
+.initial-container section .saberMais {
     display: flex;
     align-items: center;
-    height: 40px;
-    width: 100%;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.137);
+    justify-content: center;
+    width: 315px;
+    height: 60px;
+    margin-top: 25px;
+
+    background: rgba(0, 102, 255, 0.88);
+    border-radius: 15px;
 }

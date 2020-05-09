@@ -10,7 +10,7 @@ export default function Initial() {
         <div className="initial-container">
             <header>
                 <div className="logo">
-                    <img src={ logoImg } alt="Logo" className="logo" />
+                    <img src={ logoImg } alt="Logo" className="logo-header" />
                 </div>
                 
                 <div className="buttons">
@@ -25,31 +25,22 @@ export default function Initial() {
             </header>
 
             <section>
-                <div className="title">
-                    <h1>
-                        Notes
-                    </h1>
-                    <h2>and</h2>
-                    <h1>
-                        Tasks
-                    </h1>
-                </div>
                 <div className="text">
-                    <p>
+                    <p className="firstText">
                         Agora ficou fácil a organização das tarefas do dia-a-dia!
-                        Com <b><i>Notes and Tasks</i></b> Suas anotações e tarefas estão organizadas
-                        e seguras.
                     </p>
-                    <p>
-                        Se ainda não tem uma conta, crie uma agora mesmo...basta clicar no botão
-                        "Criar Conta" na parte superior da página, e se você já é inscrito, compartilhe a experiência
-                        com seus amigos e familiares.
+                    <p className="lastText">
+                    Crie uma agora mesmo, e se você já é inscrito, compartilhe a
+                    experiência com seus amigos e familiares.
                     </p>
-                </div>
-            </section>
 
-            <footer>
-            </footer>
+                    <Link className="button saberMais" to="/login">
+                        Saber mais
+                    </Link>
+                </div>
+
+                <img src={ logoImg } alt="Logo" className="logo-section" />
+            </section>
         </div>
     );
 }
