@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { FaGithub, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaEnvelope } from 'react-icons/fa';
 
 import './style.css';
 
@@ -58,6 +58,21 @@ export default function login() {
                     </div>
                 </form>
             </section>
+
+            <footer>
+                <p>By: João Victor da Silva</p>
+
+                <div className="links">
+                    <a className="gitHubIcon" href="https://github.com/joaovds">
+                        <FaGithub size="50" color="black" />
+                    </a> 
+
+                    <a className="emailIcon">
+                        <FaEnvelope size="50" color="black" />
+                        <p>jv782063@gmail.com</p>
+                    </a>
+                </div>
+            </footer>
         </div>
     );
 }
