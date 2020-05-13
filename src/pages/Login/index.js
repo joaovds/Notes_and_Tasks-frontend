@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './style.css';
 
 import logoImg from '../../assets/logo.png';
+import tasksBan from '../../assets/undraw_tasks.png';
 
 export default function login() {
     return (
@@ -24,6 +25,39 @@ export default function login() {
                 </div>
                 
             </header>
+
+            <section className="form-login">
+                <img src={ tasksBan } alt="tasks" className="tasksBan" />
+
+                <form>
+                    <div className="title">
+                        <h1>Log In</h1>
+                        <h2>Faça login e organize seu dia!</h2>
+                    </div>
+
+                    <div className="inputs">
+                        <label for="email">
+                            E-mail
+                        </label>
+                        <input
+                            name="email"
+                            type="email"
+                        />
+                        <label for="password">
+                            Password
+                        </label>
+                        <input
+                            name="password"
+                            type="password"
+                        />
+
+                        <button className="button" type="submit">Entrar</button>
+                        <Link className="button createacont" to="/register">
+                            Ainda não tenho uma conta. Criar uma...
+                        </Link>
+                    </div>
+                </form>
+            </section>
         </div>
     );
 }

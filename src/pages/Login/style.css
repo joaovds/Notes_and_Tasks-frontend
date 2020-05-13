@@ -45,3 +45,47 @@
 .login-container header div.buttons .register {
     margin-right: 80px;
 }
+
+.login-container section.form-login {
+    display: flex;
+    width: 1000px;
+    margin: 6px auto 0;
+    font-family: cursive;
+    align-items: center;
+    justify-content: space-around;
+}
+.login-container section.form-login img.tasksBan {
+    width: 400px;
+}
+.login-container section.form-login div.title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+.login-container section.form-login div.title h1 {
+    font-weight: 600;
+    font-size: 50px;
+}
+.login-container section.form-login div.title h2 {
+    font-weight: 500;
+    font-size: 30px;
+}
+.login-container section.form-login div.inputs {
+    max-width: 500px;
+}
+.login-container section.form-login  div.inputs button {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 10px;
+}
+.login-container section.form-login  div.inputs button:hover {
+    color: black;
+}
+.login-container section.form-login div.inputs a.createacont {
+    color: rgb(110, 109, 109);
+    font-size: 13px;
+    border: none;
+    background: none;
+}
+.login-container section.form-login div.inputs a.createacont:hover {
+    color: #18A0FB;
+}
