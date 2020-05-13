@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaGithub, FaEnvelope } from 'react-icons/fa';
 
 import './style.css';
 
@@ -17,7 +18,7 @@ export default function Initial() {
                     <Link className="button login" to="/login">
                         Log in
                     </Link>
-                    <Link className="button register" to="">
+                    <Link className="button register" to="/register">
                         Register
                     </Link>
                 </div>
@@ -34,13 +35,28 @@ export default function Initial() {
                     experiência com seus amigos e familiares.
                     </p>
 
-                    <Link className="button saberMais" to="/login">
+                    <Link className="button saberMais" to="/">
                         Saber mais
                     </Link>
                 </div>
 
                 <img src={ logoImg } alt="Logo" className="logo-section" />
             </section>
+
+            <footer>
+                <p>By: João Victor da Silva</p>
+
+                <div className="links">
+                    <a className="gitHubIcon" href="https://github.com/joaovds">
+                        <FaGithub size="50" color="black" />
+                    </a> 
+
+                    <a className="emailIcon">
+                        <FaEnvelope size="50" color="black" />
+                        <p>jv782063@gmail.com</p>
+                    </a>
+                </div>
+            </footer>
         </div>
     );
 }

@@ -5,10 +5,6 @@
     margin: 0 auto;
 
     height: 100vh;
-
-    background-image: url(../../assets/backgroud.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
 }
 
 .login-container header {
