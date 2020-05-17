@@ -38,3 +38,46 @@ input {
     margin: 7px 0;
     box-shadow: inset 1px 0 4px black;
 }
+
+header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    height: 100px;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(220, 216, 216, 0.7) 0%, rgba(218, 218, 218, 0.56) 100%);
+}
+header img.logo-header {
+    width: 140px;
+    margin-left: 80px;
+    margin-top: 3px;
+}
+header div.buttons {
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+header div.buttons .button {
+    display: flex;
+    width: 130px;
+    height: 40px;
+    margin-right: 60px;
+    background-color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.015em;
+    color: #18A0FB;
+
+    border: 1px solid #18A0FB;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+header div.buttons .register {
+    margin-right: 80px;
+}

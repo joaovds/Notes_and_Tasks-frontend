@@ -1,0 +1,49 @@
+.register-container {
+    width: 100%;
+}
+
+.register-container section {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.register-container section img.tasksBan2 {
+    width: 800px;
+}
+.register-container section form {
+    display: flex;
+    font-family: cursive;
+    flex-direction: column;
+}
+.register-container section form div.title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+.register-container section form div.title h1 {
+    font-weight: 600;
+    font-size: 50px;
+}
+.register-container section form div.inputs {
+    max-width: 500px;
+}
+.register-container section form  div.inputs button {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 10px;
+}
+.register-container section form  div.inputs button:hover {
+    color: black;
+}
+.register-container section form div.inputs a.createacont {
+    color: rgb(110, 109, 109);
+    font-size: 13px;
+    border: none;
+    background: none;
+}
+.register-container section form div.inputs a.createacont:hover {
+    color: #18A0FB;
+}
