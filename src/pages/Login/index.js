@@ -16,8 +16,8 @@ export default function login() {
                 </div>
                 
                 <div className="buttons">
-                    <Link className="button login" to="/login">
-                        Log in
+                    <Link className="button homePage" to="/">
+                        Home Page
                     </Link>
                     <Link className="button register" to="/register">
                         Register

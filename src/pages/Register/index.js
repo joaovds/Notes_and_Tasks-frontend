@@ -16,11 +16,11 @@ export default function Register() {
                 </div>
                 
                 <div className="buttons">
+                    <Link className="button homePage" to="/">
+                        Home Page
+                    </Link>
                     <Link className="button login" to="/login">
                         Log in
-                    </Link>
-                    <Link className="button register" to="/register">
-                        Register
                     </Link>
                 </div>
             </header>

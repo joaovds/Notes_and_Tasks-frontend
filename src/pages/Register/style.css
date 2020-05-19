@@ -5,12 +5,12 @@
 .register-container section {
     display: flex;
     width: 90%;
-    margin: 0 auto;
+    margin: 20px auto;
     align-items: center;
     justify-content: space-evenly;
 }
 .register-container section img.tasksBan2 {
-    width: 800px;
+    width: 600px;
 }
 .register-container section form {
     display: flex;

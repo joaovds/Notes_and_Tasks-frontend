@@ -1,0 +1,28 @@
+.note-container {
+    width: 100%;
+}
+
+.note-container header div.buttons .logout {
+    margin-right: 8px;
+}
+.note-container header div.buttons .config {
+    width: 50px;
+}
+.note-container header .filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 100px;
+    width: 210px;
+}
+.note-container header .filter select {
+    width: 110px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.015em;
+    color: #18A0FB;
+    border: 1px solid #18A0FB;
+    background-color: #FFFFFF;
+}
