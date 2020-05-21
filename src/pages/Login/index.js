@@ -19,9 +19,8 @@ export default function login() {
         e.preventDefault();
 
         try {
-            const resposta = await api.post('session', { email, password });
+            const resposta = await api.post('authenticate', { email, password });
 
-            localStorage.setItem('nome', resposta.data.nome);
             localStorage.setItem('cd_user', resposta.data.cd_user);
 
             history.push('/myNotes');
