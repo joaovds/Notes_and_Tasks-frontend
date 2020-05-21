@@ -3,6 +3,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { FaCog, FaEdit, FaTimes } from 'react-icons/fa';
 
 import api from '../../services/api';
+import dateformat from 'dateformat';
+import '../../config/FormatDate/format';
 
 import './style.css';
 import logoImg from '../../assets/logo.png';
@@ -70,7 +72,7 @@ export default function MyNotes() {
 
                             <strong>{note.title}</strong>
                             <p>{note.note}</p>
-                            <small>{note.updateDate}</small>
+                            <small>{dateformat(note.updateDate, 'dddd, dd/mm/yyyy - HH:MM:ss')}</small>
                         </li>
                     ))}
                 </ul>
