@@ -1,12 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { FaCog, FaEdit, FaTimes } from 'react-icons/fa';
+
+import api from '../../services/api';
 
 import './style.css';
 import logoImg from '../../assets/logo.png';
 import Footer from '../FooterPages';
 
 export default function MyNotes() {
+
+    const [notes, setNotes] = useState([]);
+
+    const cd_user = localStorage.getItem('cd_user');
+
+    const history = useHistory();
+
+    useEffect(() => {
+        api.get('userNotes', {
+            headers: {
+                Authorization: cd_user
+            }
+        }).then(res => {
+            setNotes(res.data);
+        })
+    }, [cd_user]);
+
+    async function handleLogout() {
+        localStorage.clear();
+        history.push('/');     
+    }
+
     return (
         <div className="note-container">
             <header>
@@ -24,7 +48,7 @@ export default function MyNotes() {
                         </select>
                     </div>
 
-                    <button className="button logout">
+                    <button className="button logout" onClick={handleLogout}>
                         Logout
                     </button>
                     <Link className="button config" to="">
@@ -33,176 +57,24 @@ export default function MyNotes() {
                 </div>
             </header>
 
-            <ul>
-                <li>
-                    <button type="button" className="edit">
-                        <FaEdit size="22" color="darkblue" />
-                    </button>
-                    <button type="button" className="delete">
-                        <FaTimes size="22" color="rgb(218, 21, 70)" />
-                    </button>
+            <section>
+                <ul>
+                    {notes.map(note => (
+                        <li key={note.cd_user}>
+                            <button type="button" className="edit">
+                                <FaEdit size="22" color="darkblue" />
+                            </button>
+                            <button type="button" className="delete">
+                                <FaTimes size="22" color="rgb(218, 21, 70)" />
+                            </button>
 
-                    <strong>Title</strong>
-                    <p>Est nulla ipsum incididunt duis labore ad aliqua.</p>
-                    <small>19/05/2020 - 18:56:37</small>
-                </li>
-
-                <li>
-                    <button type="button" className="edit">
-                        <FaEdit size="22" color="darkblue" />
-                    </button>
-                    <button type="button" className="delete">
-                        <FaTimes size="22" color="rgb(218, 21, 70)" />
-                    </button>
-
-                    <strong>Title</strong>
-                    <p>Amet occaecat ad duis nisi deserunt adipisicing quis.</p>
-                    <small>19/05/2020 - 18:56:37</small>
-                </li>
-
-                <li>
-                    <button type="button" className="edit">
-                        <FaEdit size="22" color="darkblue" />
-                    </button>
-                    <button type="button" className="delete">
-                        <FaTimes size="22" color="rgb(218, 21, 70)" />
-                    </button>
-
-                    <strong>Title</strong>
-                    <p>Ea ut elit mollit dolor commodo deserunt laborum quis enim magna ad.</p>
-                    <small>19/05/2020 - 18:56:37</small>
-                </li>
-
-                <li>
-                    <button type="button" className="edit">
-                        <FaEdit size="22" color="darkblue" />
-                    </button>
-                    <button type="button" className="delete">
-                        <FaTimes size="22" color="rgb(218, 21, 70)" />
-                    </button>
-
-                    <strong>Title</strong>
-                    <p>Cupidatat dolore aute ea sunt adipisicing labore ad aute.</p>
-                    <small>19/05/2020 - 18:56:37</small>
-                </li>
-
-                <li>
-                    <button type="button" className="edit">
-                        <FaEdit size="22" color="darkblue" />
-                    </button>
-                    <button type="button" className="delete">
-                        <FaTimes size="22" color="rgb(218, 21, 70)" />
-                    </button>
-
-                    <strong>Title</strong>
-                    <p>Irure cillum eiusmod consequat cupidatat labore mollit consequat occaecat.</p>
-                    <small>19/05/2020 - 18:56:37</small>
-                </li>
-
-                <li>
-                    <button type="button" className="edit">
-                        <FaEdit size="22" color="darkblue" />
-                    </button>
-                    <button type="button" className="delete">
-                        <FaTimes size="22" color="rgb(218, 21, 70)" />
-                    </button>
-
-                    <strong>Title</strong>
-                    <p>Aute aute ut aliquip elit duis.</p>
-                    <small>19/05/2020 - 18:56:37</small>
-                </li>
-
-                <li>
-                    <button type="button" className="edit">
-                        <FaEdit size="22" color="darkblue" />
-                    </button>
-                    <button type="button" className="delete">
-                        <FaTimes size="22" color="rgb(218, 21, 70)" />
-                    </button>
-
-                    <strong>Title</strong>
-                    <p>Aute aute ut aliquip elit duis.</p>
-                    <small>19/05/2020 - 18:56:37</small>
-                </li>
-
-                <li>
-                    <button type="button" className="edit">
-                        <FaEdit size="22" color="darkblue" />
-                    </button>
-                    <button type="button" className="delete">
-                        <FaTimes size="22" color="rgb(218, 21, 70)" />
-                    </button>
-
-                    <strong>Title</strong>
-                    <p>Aute aute ut aliquip elit duis.</p>
-                    <small>19/05/2020 - 18:56:37</small>
-                </li>
-
-                <li>
-                    <button type="button" className="edit">
-                        <FaEdit size="22" color="darkblue" />
-                    </button>
-                    <button type="button" className="delete">
-                        <FaTimes size="22" color="rgb(218, 21, 70)" />
-                    </button>
-
-                    <strong>Title</strong>
-                    <p>Cupidatat dolore aute ea sunt adipisicing labore ad aute.</p>
-                    <small>19/05/2020 - 18:56:37</small>
-                </li>
-
-                <li>
-                    <button type="button" className="edit">
-                        <FaEdit size="22" color="darkblue" />
-                    </button>
-                    <button type="button" className="delete">
-                        <FaTimes size="22" color="rgb(218, 21, 70)" />
-                    </button>
-
-                    <strong>Title</strong>
-                    <p>Irure cillum eiusmod consequat cupidatat labore mollit consequat occaecat.</p>
-                    <small>19/05/2020 - 18:56:37</small>
-                </li>
-
-                <li>
-                    <button type="button" className="edit">
-                        <FaEdit size="22" color="darkblue" />
-                    </button>
-                    <button type="button" className="delete">
-                        <FaTimes size="22" color="rgb(218, 21, 70)" />
-                    </button>
-
-                    <strong>Title</strong>
-                    <p>Aute aute ut aliquip elit duis.</p>
-                    <small>19/05/2020 - 18:56:37</small>
-                </li>
-
-                <li>
-                    <button type="button" className="edit">
-                        <FaEdit size="22" color="darkblue" />
-                    </button>
-                    <button type="button" className="delete">
-                        <FaTimes size="22" color="rgb(218, 21, 70)" />
-                    </button>
-
-                    <strong>Title</strong>
-                    <p>Aute aute ut aliquip elit duis.</p>
-                    <small>19/05/2020 - 18:56:37</small>
-                </li>
-                
-                <li>
-                    <button type="button" className="edit">
-                        <FaEdit size="22" color="darkblue" />
-                    </button>
-                    <button type="button" className="delete">
-                        <FaTimes size="22" color="rgb(218, 21, 70)" />
-                    </button>
-
-                    <strong>Title</strong>
-                    <p>Aute aute ut aliquip elit duis.</p>
-                    <small>19/05/2020 - 18:56:37</small>
-                </li>
-            </ul>
+                            <strong>{note.title}</strong>
+                            <p>{note.note}</p>
+                            <small>{note.updateDate}</small>
+                        </li>
+                    ))}
+                </ul>
+            </section>
 
             <Footer />
         </div>

@@ -1,4 +1,5 @@
 .register-container section {
+    position: relative;
     display: flex;
     width: 90%;
     margin: 20px auto;

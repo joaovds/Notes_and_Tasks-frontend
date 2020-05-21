@@ -21,7 +21,7 @@ export default function login() {
         try {
             const resposta = await api.post('authenticate', { email, password });
 
-            localStorage.setItem('cd_user', resposta.data.cd_user);
+            localStorage.setItem('cd_user', resposta.data.user.cd_user);
 
             history.push('/myNotes');
         } catch (error) {
