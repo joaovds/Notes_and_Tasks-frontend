@@ -1,5 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+
+import api from '../../services/api';
 
 import Footer from '../FooterPages';
 import './style.css';
@@ -8,6 +10,26 @@ import logoImg from '../../assets/logo.png';
 import tasksBan from '../../assets/undraw_tasks.png';
 
 export default function login() {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const history = useHistory();
+
+    async function handleLogin(e) {
+        e.preventDefault();
+
+        try {
+            const resposta = await api.post('session', { email, password });
+
+            localStorage.setItem('nome', resposta.data.nome);
+            localStorage.setItem('cd_user', resposta.data.cd_user);
+
+            history.push('/myNotes');
+        } catch (error) {
+            alert('Falha no Login! Confira se você digitou corretamente.');
+        }
+    }
+
     return (
         <div className="login-container">
             <header>
@@ -29,7 +51,7 @@ export default function login() {
             <section className="form-login">
                 <img src={ tasksBan } alt="tasks" className="tasksBan" />
 
-                <form>
+                <form onSubmit={handleLogin}>
                     <div className="title">
                         <h1>Log In</h1>
                         <h2>Faça login e organize seu dia!</h2>
@@ -42,6 +64,8 @@ export default function login() {
                         <input
                             name="email"
                             type="email"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
                         />
                         <label for="password">
                             Password
@@ -49,6 +73,8 @@ export default function login() {
                         <input
                             name="password"
                             type="password"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
                         />
 
                         <button className="button" type="submit">Entrar</button>
