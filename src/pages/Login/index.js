@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 import api from '../../services/api';
 
-import Footer from '../FooterPages';
+import Footer from '../../components/FooterPages';
 import './style.css';
 
 import logoImg from '../../assets/logo.png';

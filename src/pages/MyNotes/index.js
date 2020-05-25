@@ -8,7 +8,7 @@ import '../../config/FormatDate/format';
 
 import './style.css';
 import logoImg from '../../assets/logo.png';
-import Footer from '../FooterPages';
+import Footer from '../../components/FooterPages';
 
 export default function MyNotes() {
 

@@ -6,6 +6,8 @@
 }
 
 body {
+    position: relative;
+    height: 100vh;
     font: Arial, sans-serif;
     background: #F5F5F5;
 }

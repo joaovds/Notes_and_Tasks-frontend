@@ -1,5 +1,4 @@
 .initial-container section {
-    position: relative;
     display: flex;
     height: 500px;
     justify-content: space-evenly;
