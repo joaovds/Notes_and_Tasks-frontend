@@ -61,7 +61,7 @@ header div.buttons {
     justify-content: space-between;
     margin-top: 40px;
 }
-header div.buttons .button, .button {
+header div.buttons button, .button {
     display: flex;
     width: 130px;
     height: 40px;

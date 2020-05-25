@@ -5,6 +5,9 @@ Footer {
 .note-container header div.buttons .logout {
     margin-right: 8px;
 }
+.note-container header div.buttons .newNote {
+    margin-right: 5px;
+}
 .note-container header div.buttons .config {
     width: 50px;
 }

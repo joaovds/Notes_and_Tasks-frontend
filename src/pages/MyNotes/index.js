@@ -50,6 +50,9 @@ export default function MyNotes() {
                         </select>
                     </div>
 
+                    <button className="button newNote">
+                        Criar nota
+                    </button>
                     <button className="button logout" onClick={handleLogout}>
                         Logout
                     </button>
