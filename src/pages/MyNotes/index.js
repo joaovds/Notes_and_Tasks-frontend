@@ -72,7 +72,7 @@ export default function MyNotes() {
 
                             <strong>{note.title}</strong>
                             <p>{note.note}</p>
-                            <small>{dateformat(note.updateDate, 'dddd, dd/mm/yyyy - HH:MM:ss')}</small>
+                            <small>{dateformat(note.updateDate, 'UTC:dddd, dd/mm/yyyy - HH:MM:ss')}</small>
                         </li>
                     ))}
                 </ul>
