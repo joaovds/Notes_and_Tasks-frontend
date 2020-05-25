@@ -1,11 +1,6 @@
-body {
-    position: relative;
-}
 Footer {
-    position: absolute;
-    margin-bottom: 0;
+    position: fixed;
 }
-
 
 .note-container header div.buttons .logout {
     margin-right: 8px;
@@ -31,12 +26,7 @@ Footer {
     border: 1px solid #18A0FB;
     background-color: #FFFFFF;
 }
-
-.note-container section {
-    min-height: 100vh;
-}
-
-.note-container ul {
+.note-container section ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     list-style: none;
@@ -45,7 +35,7 @@ Footer {
     width: 80%;
     margin: 50px auto;
 }
-.note-container ul li {
+.note-container section ul li {
     padding: 20px;
     border-bottom-right-radius: 60px 5px;
     border:1px solid #E8E8E8;
@@ -64,27 +54,27 @@ Footer {
 
     box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
 }
-.note-container ul li:hover {
+.note-container section ul li:hover {
     box-shadow: 0 0 9px black;
 }
 
-.note-container ul li button {
+.note-container section ul li button {
     width: 30px;
     height: 30px;
     position: absolute;
     border: 0;
     background: transparent;
 }
-.note-container ul li button.delete {
+.note-container section ul li button.delete {
     top: 3px;
     right: 3px;
 }
-.note-container ul li button.edit {
+.note-container section ul li button.edit {
     top: 3px;
     right: 38px;
 }
 
-.note-container ul li strong {
+.note-container section ul li strong {
     display: block;
     text-align: center;
     font-size: 20px;
@@ -92,11 +82,11 @@ Footer {
     margin-bottom: 15px;
 }
 
-.note-container ul li p {
+.note-container section ul li p {
     margin-bottom: 18px;
 }
 
-.note-container ul li small {
+.note-container section ul li small {
     display: block;
     text-align: right;
 }
