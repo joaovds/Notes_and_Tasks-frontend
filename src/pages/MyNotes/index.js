@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FaCog, FaEdit, FaTimes } from 'react-icons/fa';
 
+import Modal from '../../components/ModalNewNote/index';
+
 import api from '../../services/api';
 import dateformat from 'dateformat';
 import '../../config/FormatDate/format';
@@ -13,9 +15,9 @@ import Footer from '../../components/FooterPages';
 export default function MyNotes() {
 
     const [notes, setNotes] = useState([]);
+    const [modal, setModal] = useState(false);
 
     const cd_user = localStorage.getItem('cd_user');
-
     const history = useHistory();
 
     useEffect(() => {
@@ -35,6 +37,11 @@ export default function MyNotes() {
 
     return (
         <div className="note-container">
+            <Modal
+                open={modal}
+                setModal={setModal}
+            />
+
             <header>
                 <div className="logo">
                     <img src={ logoImg } alt="Logo" className="logo-header" />
@@ -50,7 +57,10 @@ export default function MyNotes() {
                         </select>
                     </div>
 
-                    <button className="button newNote">
+                    <button
+                        className="button newNote"
+                        onClick={() => setModal(true)}
+                    >
                         Criar nota
                     </button>
                     <button className="button logout" onClick={handleLogout}>
@@ -74,8 +84,8 @@ export default function MyNotes() {
                             </button>
 
                             <strong>{note.title}</strong>
-                            <p>{note.note}</p>
-                            <small>{dateformat(note.updateDate, 'UTC:dddd, dd/mm/yyyy - HH:MM:ss')}</small>
+                            <p>{(note.note).substr(0, 75)+'...'}</p>
+                            <small>{dateformat(note.updateDate, 'UTC:dddd, dd/mm/yyyy HH:MM:ss')}</small>
                         </li>
                     ))}
                 </ul>
